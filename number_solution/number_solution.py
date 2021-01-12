@@ -19,6 +19,7 @@ def is_lucky_no_comments(number):
     return digit_sum == 0
 
 
+# noinspection DuplicatedCode
 def is_lucky(number):
     """Determine if a positive, even number is lucky. A number is lucky if
 the sum of the first half of its digits is equal to the sum of the

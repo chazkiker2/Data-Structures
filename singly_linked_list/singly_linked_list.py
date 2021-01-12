@@ -27,7 +27,7 @@ class LinkedList:
             self.tail = new_node
             return
 
-        self.head.next = self.head
+        new_node.next = self.head
         self.head = new_node
 
     def remove_head(self):
@@ -35,7 +35,7 @@ class LinkedList:
             # no items in list
             return
 
-        old_head = self.head.value
+        old_head_value = self.head.value
 
         if self.head.next is None:
             # only one item in list
@@ -43,7 +43,7 @@ class LinkedList:
 
         # most important part of method below
         self.head = self.head.next
-        return old_head
+        return old_head_value
 
     def remove_tail(self):
         if self.head is None:
