@@ -40,6 +40,12 @@ class MinHeap:
     def get_min(self):
         return self.heap[0]
 
+    def heapsort(self):
+        h = []
+        for value in self.heap:
+            heappush(h, value)
+        return [heappop(h) for i in range(len(h))]
+
 
 # # Driver program to test above function
 # heapObj = MinHeap()
