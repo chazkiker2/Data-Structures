@@ -26,9 +26,9 @@ class Heap:
     def heapify(self):
         """Transform list into a heap, in-place, in O(len(x)) time"""
         n = len(self.storage)
-        # Transform bottom-up. The largest index there's any point to looking at is
-        # the largest with a child index in-range, so must have 2*i + 1 < n,
-        # or i
+        # Transform bottom-up. The largest idx there's any point to looking at is
+        # the largest with a child idx in-range, so must have 2*idx + 1 < n,
+        # or idx
         for i in reversed(range(n // 2)):
             self._sift_up(i)
 
@@ -36,7 +36,7 @@ class Heap:
         pass
 
     # 'heap' is a heap at all indices >= start_pos, except for possibly pos.
-    # pos is hte index of a leaf with a possibly out-of-order value.
+    # pos is hte idx of a leaf with a possibly out-of-order value.
     # Restore the heap invariant
     def _sift_down(self, start_pos, pos):
         new_item = self.storage[pos]
@@ -61,7 +61,7 @@ class Heap:
         # bubble up the smaller child until hitting a leaf
         child_pos = 2 * pos + 1  # leftmost child position
         while child_pos < end_pos:
-            # set child_pos to index of smaller child
+            # set child_pos to idx of smaller child
             right_pos = child_pos + 1
             if right_pos < end_pos and not self.storage[child_pos] < self.storage[right_pos]:
                 child_pos = right_pos

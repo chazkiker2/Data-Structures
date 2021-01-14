@@ -171,7 +171,7 @@ class XorLinkedList:
         else:
             return 0
 
-    # method to get node data value by index
+    # method to get node data value by idx
     def print_by_index(self, index):
         prev_id = 0
         node = self.head
@@ -182,7 +182,7 @@ class XorLinkedList:
                 prev_id = id(node)
                 node = self.__type_cast(next_id)
             else:
-                return "Value not found index out of range."
+                return "Value not found idx out of range."
         return node.value
 
     # method to check if linked list is empty or not

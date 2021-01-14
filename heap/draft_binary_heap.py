@@ -26,7 +26,7 @@ class MinHeap:
         i = int(i)
         self.heap[i] = new_val
         while i != 0 and self.heap[self.parent(i)] > self.heap[i]:
-            # Swap heap[i] with heap[parent(i)]
+            # Swap heap[idx] with heap[parent(idx)]
             self.heap[i], self.heap[self.parent(i)] = self.heap[self.parent(i)], self.heap[i]
 
     def extract_min(self):

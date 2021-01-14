@@ -28,7 +28,7 @@ second half of its digits."""
     # half_power = 10 ** (floor(log10(number) + 1) // 2)
     # Calculate the number of digits.
     half_power = floor(log10(abs(number)) + 1)
-    # Divide it by two to get the size of a half. Technically since
+    # Divide it by two to get the length of a half. Technically since
     # there are guaranteed to be an even number of digits we don't
     # have to specify integer division, but it's best to be explicit
     # whenever possible
