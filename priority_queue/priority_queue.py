@@ -14,7 +14,7 @@ class PriorityQueue:
         self.storage.insert_key(item)
 
     def dequeue(self):
-        if self.size == 0:  # If queue is empty
+        if self.size == 0:  # If test_queue is empty
             return
 
         self.size -= 1

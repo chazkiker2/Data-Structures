@@ -8,11 +8,11 @@ class LinkedListTests(unittest.TestCase):
 
     def test_add_to_tail(self):
         self.list.add_to_tail(1)
-        self.assertEqual(self.list.tail.value, 1)
-        self.assertEqual(self.list.head.value, 1)
+        self.assertEqual(self.list.tail.key, 1)
+        self.assertEqual(self.list.head.key, 1)
         self.list.add_to_tail(2)
-        self.assertEqual(self.list.tail.value, 2)
-        self.assertEqual(self.list.head.value, 1)
+        self.assertEqual(self.list.tail.key, 2)
+        self.assertEqual(self.list.head.key, 1)
 
     def test_remove_head(self):
         self.list.add_to_tail(10)

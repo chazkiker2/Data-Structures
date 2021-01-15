@@ -4,7 +4,7 @@ class Heap:
         self.current_size = 0
 
     def insert(self, value):
-        """Inserts a value into the heap"""
+        """Inserts a key into the heap"""
 
     def delete(self):
         pass

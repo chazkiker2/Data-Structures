@@ -36,7 +36,7 @@ class Heap:
         pass
 
     # 'heap' is a heap at all indices >= start_pos, except for possibly pos.
-    # pos is hte idx of a leaf with a possibly out-of-order value.
+    # pos is hte idx of a leaf with a possibly out-of-order key.
     # Restore the heap invariant
     def _sift_down(self, start_pos, pos):
         new_item = self.storage[pos]

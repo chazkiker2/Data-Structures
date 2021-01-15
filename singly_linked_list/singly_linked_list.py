@@ -49,7 +49,7 @@ class LinkedList:
             # no items in the list
             return
 
-        old_tail = self.tail.value
+        old_tail = self.tail.key
         if self.head.next is None:
             # only one item in the list
             self.head = None

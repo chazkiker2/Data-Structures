@@ -14,9 +14,9 @@ class BinMaxHeap:
     def _sift_up(self, index):
         while index // 2 > 0:  # while given index has a parent
             if self.heap[index] > self.heap[index // 2]:  # if current item > parent item
-                tmp = self.heap[index // 2]  # temp = parent item value
-                self.heap[index // 2] = self.heap[index]  # assign current item value to parent's location
-                self.heap[index] = tmp  # assign parent item value to child/current item's location
+                tmp = self.heap[index // 2]  # temp = parent item key
+                self.heap[index // 2] = self.heap[index]  # assign current item key to parent's location
+                self.heap[index] = tmp  # assign parent item key to child/current item's location
             index //= 2  # shorthand for `index = index // 2`
 
     def max_child(self, idx):

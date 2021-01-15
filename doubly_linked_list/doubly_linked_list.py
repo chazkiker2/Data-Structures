@@ -24,7 +24,7 @@ class DoublyLinkedList:
     def __len__(self):
         return self.length
 
-    # Wraps the given value in a ListNode and inserts it
+    # Wraps the given key in a ListNode and inserts it
     # as the new head of the list.
     # Don't forget to handle the old head node's previous pointer accordingly.
     def add_to_head(self, value):
@@ -45,7 +45,7 @@ class DoublyLinkedList:
 
     # Removes the List's current head node, making the
     # current head's next node the new head of the List.
-    # Returns the value of the removed Node.
+    # Returns the key of the removed Node.
     def remove_from_head(self):
         """Remove the first element in the list
         """
@@ -54,7 +54,7 @@ class DoublyLinkedList:
         if self.head is None:  # If no items in list
             return
 
-        old_head_val = self.head.value
+        old_head_val = self.head.key
 
         if self.head.next is None:  # If only one item in list
             self.head = self.tail = None
@@ -63,7 +63,7 @@ class DoublyLinkedList:
 
         return old_head_val
 
-    # Wraps the given value in a ListNode and inserts it
+    # Wraps the given key in a ListNode and inserts it
     # as the new tail of the list. Don't forget to handle
     # the old tail node's next pointer accordingly.
     def add_to_tail(self, value):
@@ -94,7 +94,7 @@ class DoublyLinkedList:
 
     # Removes the List's current tail node, making the
     # current tail's previous node the new tail of the List.
-    # Returns the value of the removed Node.
+    # Returns the key of the removed Node.
     def remove_from_tail(self):
         """Remove the item at the end of the list
         """
@@ -102,7 +102,7 @@ class DoublyLinkedList:
             return
 
         self.length -= 1
-        old_tail_val = self.tail.value
+        old_tail_val = self.tail.key
         if self.head.next is None:  # If only one item in list
             self.tail = self.head = None
             return old_tail_val
@@ -180,29 +180,29 @@ class DoublyLinkedList:
             # print("node is head and tail!")
             self.head = self.tail = None
             self.length = 0
-            return node.value
+            return node.key
 
         elif node is self.head:
             # print("self.head is input node")
             self.head = self.head.next
             self.head.prev = None
-            return node.value
+            return node.key
 
         elif node is self.tail:
             # print("self.tail is input node")
             self.tail = self.tail.prev
             self.tail.next = None
-            return node.value
+            return node.key
 
         else:
             prev_ref = node.prev
             next_ref = node.next
             prev_ref.next = next_ref
             next_ref.prev = prev_ref
-            return node.value
+            return node.key
 
     def get_max(self):
-        """Finds and returns the maximum value of all the nodes
+        """Finds and returns the maximum key of all the nodes
         in the List."""
 
         # initialize temp and max to point at head
@@ -212,9 +212,9 @@ class DoublyLinkedList:
         max_node = temp = self.head
 
         while temp is not None:
-            if temp.value > max_node.value:
+            if temp.key > max_node.key:
                 max_node = temp
 
             temp = temp.next
 
-        return max_node.value
+        return max_node.key

@@ -81,7 +81,7 @@ class BinMinHeap:
         self.length -= 1  # reduce length (b/c we're deleting an element)
         self.heap.pop()  # remove the original copy of final element (remember we set the root to that element)
         self._sift_down(1)  # take the root element and find its correct position in the tree.
-        return return_val  # return the value of the freshly-deleted minimum element
+        return return_val  # return the key of the freshly-deleted minimum element
 
     # given the index of the parent, find the smaller of that parent's two children
     def min_child(self, idx):

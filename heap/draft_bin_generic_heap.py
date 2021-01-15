@@ -8,7 +8,7 @@ class Heap:
         return self.length
 
     def insert(self, value):
-        self.heap.append(value)  # add value to heap
+        self.heap.append(value)  # add key to heap
         self.length += 1  # increase length (b/c we're inserting)
         self._sift_up(self.length)  # take the freshly appended element and find its correct position in tree
 

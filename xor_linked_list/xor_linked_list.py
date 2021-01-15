@@ -71,7 +71,7 @@ class XorLinkedList:
             self.head.npx = self.tail.npx = 0
 
         else:  # If list has more than 2 nodes
-            res = self.head.value
+            res = self.head.key
             x = self.__type_cast(0 ^ self.head.npx)  # Address of next node
             y = (id(self.head) ^ x.npx)  # Address of next of next node (the node following next)
             self.head = x
@@ -99,7 +99,7 @@ class XorLinkedList:
                     prev_id = id(node)
                     node = self.__type_cast(next_id)
 
-            res = node.value
+            res = node.key
             x = self.__type_cast(prev_id).npx ^ id(node)
             y = self.__type_cast(prev_id)
             y.npx = x ^ 0
@@ -116,13 +116,13 @@ class XorLinkedList:
             prev_id = 0
             node = self.head
             next_id = 1
-            print(node.value, end=' ')
+            print(node.key, end=' ')
             while next_id:
                 next_id = prev_id ^ node.npx
                 if next_id:
                     prev_id = id(node)
                     node = self.__type_cast(next_id)
-                    print(node.value, end=' ')
+                    print(node.key, end=' ')
                 else:
                     return
         else:
@@ -140,13 +140,13 @@ class XorLinkedList:
             prev_id = 0
             node = self.tail
             next_id = 1
-            print(node.value, end=' ')
+            print(node.key, end=' ')
             while next_id:
                 next_id = prev_id ^ node.npx
                 if next_id:
                     prev_id = id(node)
                     node = self.__type_cast(next_id)
-                    print(node.value, end=' ')
+                    print(node.key, end=' ')
                 else:
                     return
         else:
@@ -171,7 +171,7 @@ class XorLinkedList:
         else:
             return 0
 
-    # method to get node data value by idx
+    # method to get node data key by idx
     def print_by_index(self, index):
         prev_id = 0
         node = self.head
@@ -183,7 +183,7 @@ class XorLinkedList:
                 node = self.__type_cast(next_id)
             else:
                 return "Value not found idx out of range."
-        return node.value
+        return node.key
 
     # method to check if linked list is empty or not
     def is_empty(self):

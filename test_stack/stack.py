@@ -1,5 +1,5 @@
 """
-A stack is a data structure whose primary purpose is to store and
+A test_stack is a data structure whose primary purpose is to store and
 return elements in Last In First Out order. 
 
 1. Implement the Stack class using an array as the underlying storage structure.
@@ -23,14 +23,14 @@ class Stack:
 
     def push(self, value):
         self.size += 1
-        # self.storage.add_to_tail(value)
+        # self.storage.add_to_tail(key)
         self.storage.add_to_head(value)
-        # print(self.storage.head.value)
+        # print(self.storage.head.key)
 
     def pop(self):
         if self.size == 0:
             return
         self.size -= 1
         # return self.storage.remove_tail()
-        # print(self.storage.head.value)
+        # print(self.storage.head.key)
         return self.storage.remove_head()

@@ -1,21 +1,21 @@
 """
 Should have the methods insert, delete, get_max, _bubble_up, and _sift_down.
  - insert
-    adds the input value into the heap; this method should ensure that the
-    inserted value is in the correct spot in the heap
+    adds the input key into the heap; this method should ensure that the
+    inserted key is in the correct spot in the heap
  - delete
-    removes and returns the 'topmost' value from the heap;
+    removes and returns the 'topmost' key from the heap;
     this method needs to ensure that the heap property is maintained after the topmost element has been removed.
  - get_max
-    returns the maximum value in the heap in constant time.
+    returns the maximum key in the heap in constant time.
  - get_size
     returns the number of elements stored in the heap.
  - _bubble_up
     moves the element at the specified idx "up" the heap by swapping it with its
-     parent if the parent's value is less than the value at the specified idx.
+     parent if the parent's key is less than the key at the specified idx.
  - _sift_down
-    grabs the indices of this element's children and determines which child has a larger value.
-    If the larger child's value is larger than the parent's value, the child element is swapped with the parent.
+    grabs the indices of this element's children and determines which child has a larger key.
+    If the larger child's key is larger than the parent's key, the child element is swapped with the parent.
 """
 
 
@@ -35,8 +35,8 @@ class MaxHeap:
         return self.n == 0
 
     def insert(self, value):
-        """adds the input value into the heap;
-        this method should ensure that the inserted value is in the correct spot in the heap"""
+        """adds the input key into the heap;
+        this method should ensure that the inserted key is in the correct spot in the heap"""
         # self.n += 1
         # n = self.n
         print(f"ln41: n={self.n}")
@@ -44,7 +44,7 @@ class MaxHeap:
         self.swim(self.n)
 
     def delete(self):
-        """removes and returns the 'topmost' value from the heap.
+        """removes and returns the 'topmost' key from the heap.
         this method needs to ensure that the heap property is maintained after the topmost element has been removed."""
         current_max = self.heap[1]
         self.exchange(1, self.n-1)
@@ -53,7 +53,7 @@ class MaxHeap:
         return current_max
 
     # def get_max(self):
-    #     """returns the maximum value in the heap in constant time"""
+    #     """returns the maximum key in the heap in constant time"""
 
     def get_size(self):
         """returns the number of elements stored in the heap"""
@@ -61,12 +61,12 @@ class MaxHeap:
 
     def _bubble_up(self, index):
         """moves the element at the specified idx "up" the heap by swapping it with its parent
-        if the parent's value is less than the value at the specified idx"""
+        if the parent's key is less than the key at the specified idx"""
         pass
 
     def _sift_down(self, index):
-        """grabs the indices of this element's children and determines which child has a larger value.
-        If the larger child's value is larger than the parent's value, the child element is swapped with the parent
+        """grabs the indices of this element's children and determines which child has a larger key.
+        If the larger child's key is larger than the parent's key, the child element is swapped with the parent
         """
         pass
 

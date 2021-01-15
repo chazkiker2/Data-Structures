@@ -18,7 +18,7 @@ class DoublyLinkedList:
     def __len__(self):
         return self.length
 
-    # Wraps the given value in a ListNode and inserts it
+    # Wraps the given key in a ListNode and inserts it
     # as the new head of the list.
     # Don't forget to handle the old head node's previous pointer accordingly.
     def add_to_head(self, value):
@@ -37,7 +37,7 @@ class DoublyLinkedList:
 
     # Removes the List's current head node, making the
     # current head's next node the new head of the List.
-    # Returns the value of the removed Node.
+    # Returns the key of the removed Node.
     def remove_from_head(self):
         if self.head is None:  # if no items in list
             return
@@ -47,14 +47,14 @@ class DoublyLinkedList:
             self.length = 0
             return
 
-        old_head_val = self.head.value
+        old_head_val = self.head.key
         self.head = self.head.next
         self.head.prev = None
         self.length -= 1
 
         return old_head_val
 
-    # Wraps the given value in a ListNode and inserts it
+    # Wraps the given key in a ListNode and inserts it
     # as the new tail of the list. Don't forget to handle
     # the old tail node's next pointer accordingly.
     def add_to_tail(self, value):
@@ -72,7 +72,7 @@ class DoublyLinkedList:
 
     # Removes the List's current tail node, making the
     # current tail's previous node the new tail of the List.
-    # Returns the value of the removed Node.
+    # Returns the key of the removed Node.
     def remove_from_tail(self):
         if self.head is None:
             return  # list is already empty
@@ -82,14 +82,14 @@ class DoublyLinkedList:
 
         if self.head.next is None:  # if only one thing in the list
             self.head = self.tail = None
-            return old_tail.value
+            return old_tail.key
 
         old_tail.prev = None  # remove pointer to what will be new tail (garbage collection)
 
         self.tail = self.tail.prev
         self.tail.next = None
 
-        return old_tail.value
+        return old_tail.key
 
     # move given node to front of list (retain order of other nodes)
     def move_to_front(self, node):
@@ -100,11 +100,11 @@ class DoublyLinkedList:
         if self.tail is not node:
             node.next.prev = node.prev
         else:
-            self.tail = node.prev  # input node IS tail, assign it's prev value as new tail
+            self.tail = node.prev  # input node IS tail, assign it's prev key as new tail
 
         # first, take input node out — connect surrounding nodes
         node.prev.next = node.next  # assign the previous node's next to current node's next
-        self.head.prev = node  # take old head's prev value, point it at input node
+        self.head.prev = node  # take old head's prev key, point it at input node
         node.next = self.head
         node.prev = None
         self.head = node
@@ -119,7 +119,7 @@ class DoublyLinkedList:
         if self.head is not node:  # node is not head
             node.prev.next = node.next
         else:
-            self.head = node.next  # input node IS head — assign it's next value as new head
+            self.head = node.next  # input node IS head — assign it's next key as new head
 
         node.next.prev = node.prev
         self.tail.next = node  # current tail's next points at node
@@ -129,7 +129,7 @@ class DoublyLinkedList:
 
     def delete(self, node):
         # most important thing — nothing is pointing to node, node is pointing to nothing
-        deleted_node_val = node.value
+        deleted_node_val = node.key
 
         if self.length == 0:  # if there is nothing to delete
             return
@@ -166,12 +166,12 @@ class DoublyLinkedList:
         if self.head is None:  # can't compare max of nothing — list does not exist
             return
 
-        current_max_val = self.head.value  # original max val will initialize at the current head
+        current_max_val = self.head.key  # original max val will initialize at the current head
         current_node = self.head.next  # current_node can point to head.next because current_max_val is ALREADY saved
 
         while current_node is not None:  # while there is a new node to compare
-            if current_node.value > current_max_val:  # if val is larger than max, then reassign max
-                current_max_val = current_node.value
+            if current_node.key > current_max_val:  # if val is larger than max, then reassign max
+                current_max_val = current_node.key
             current_node = current_node.next  # reassign current_node to the next pointer
 
         return current_max_val
