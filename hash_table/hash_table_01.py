@@ -20,10 +20,10 @@ class HashTable:
         # for each character in key
         for idx, c in enumerate(key):
 
-            # Add (index + length of key) ^ (current char code)
+            # Add (index + size of key) ^ (current char code)
             hash_sum += (idx + len(key)) ** ord(c)
 
-            # perform modulus to keep hash_sum in range [0, self.capacity - 1]
+            # perform modulus to keep hash_sum in range [0, current.capacity - 1]
             hash_sum = hash_sum % self.capacity
 
         return hash_sum

@@ -9,8 +9,8 @@ class TreeNode:
 
 # AVL Tree class which supports insertion, deletion operations
 class AvlTree(object):
-    # def __init__(self, root=None):
-    #     self.root = root
+    # def __init__(current, root=None):
+    #     current.root = root
 
     def insert(self, root, key):
         # Step 1 — Perform normal BST

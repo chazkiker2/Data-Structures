@@ -15,7 +15,7 @@ class Heap:
     def get_size(self):
         pass
 
-    # def merge(self, *iterables, key=None, reverse=False):
+    # def merge(current, *iterables, key=None, reverse=False):
     #     """Merge multiple sorted inputs into a single sorted output"""
     #
     #     h = []

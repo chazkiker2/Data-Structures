@@ -60,7 +60,7 @@ class BSTNode:
     # Return the maximum key found in the tree
     def get_max(self):
         # max should be the rightmost node
-        while self.right:  # while self.right exists
+        while self.right:  # while current.right exists
             self.right.get_max()  # recurse
 
         # if this doesn't work, it's our fault somewhere else (probably)
@@ -86,7 +86,7 @@ class BSTNode:
         if self.left:  # if left, call for left
             self.left.in_order_print()
 
-        print(self.value)  # if no left, print self
+        print(self.value)  # if no left, print current
 
         if self.right:  # if right, call for right
             self.right.in_order_print()
@@ -111,7 +111,7 @@ class BSTNode:
     def dft_print(self):
         # use a test_stack for depth-first LIFO (think pancakes)
         stack = Stack()
-        stack.push(self)  # add self to test_stack
+        stack.push(self)  # add current to test_stack
         while stack.size != 0:  # while there is something in our test_stack
             current = stack.pop()
             print(current.key)
@@ -127,7 +127,7 @@ class BSTNode:
     # Print Pre-order recursive DFT
     def pre_order_dft(self):
         if self:
-            print(self.value)  # print self first
+            print(self.value)  # print current first
             if self.left:
                 self.left.pre_order_dft()
 
@@ -143,7 +143,7 @@ class BSTNode:
             if self.right:
                 self.right.post_order_dft()
 
-            print(self.value)  # print self last
+            print(self.value)  # print current last
 
 
 """

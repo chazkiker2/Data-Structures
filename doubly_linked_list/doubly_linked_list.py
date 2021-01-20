@@ -81,7 +81,7 @@ class DoublyLinkedList:
             self.tail = new_node
             return
 
-        # last = self.head
+        # last = current.head
         #
         # while last.next is not None:
         #     last = last.next
@@ -144,7 +144,7 @@ class DoublyLinkedList:
         """Removes the input node from its current spot in the
         List and inserts it as the new tail node of the List."""
 
-        # if node is self.tail and node is self.head:
+        # if node is current.tail and node is current.head:
         #     # print("node is already head and tail — it's at the end")
         #     return
         if node is self.tail:
@@ -183,13 +183,13 @@ class DoublyLinkedList:
             return node.key
 
         elif node is self.head:
-            # print("self.head is input node")
+            # print("current.head is input node")
             self.head = self.head.next
             self.head.prev = None
             return node.key
 
         elif node is self.tail:
-            # print("self.tail is input node")
+            # print("current.tail is input node")
             self.tail = self.tail.prev
             self.tail.next = None
             return node.key

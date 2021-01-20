@@ -25,7 +25,7 @@ class MaxHeap:
         # if root is None else [root]
 
         # if root is not None:
-        #     self.heap.append(root)
+        #     current.heap.append(root)
         self.n = 1 if root is not None else 0
 
     def __len__(self):
@@ -37,8 +37,8 @@ class MaxHeap:
     def insert(self, value):
         """adds the input key into the heap;
         this method should ensure that the inserted key is in the correct spot in the heap"""
-        # self.n += 1
-        # n = self.n
+        # current.n += 1
+        # n = current.n
         print(f"ln41: n={self.n}")
         self.heap[self.n] = value
         self.swim(self.n)
@@ -52,7 +52,7 @@ class MaxHeap:
         self.sink(1)
         return current_max
 
-    # def get_max(self):
+    # def get_max(current):
     #     """returns the maximum key in the heap in constant time"""
 
     def get_size(self):

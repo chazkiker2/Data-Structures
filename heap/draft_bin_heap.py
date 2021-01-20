@@ -11,11 +11,11 @@ class BinMinHeap:
     # Good news about appending: guarantees that we will maintain the complete tree property
     # Bad news: appending will probably violate the heap structure property.
     # Best news: we can write a method that will allow us to regain the heap structure property by
-    # comparing the newly added item with its parent! (see `self._sift_up()`)
+    # comparing the newly added item with its parent! (see `current._sift_up()`)
     def insert(self, item):
         """This is our client-facing method for inserting a node into the tree.
 
-        Add node into heap, fix self.length, then let _sift_up() do the heavy lifting
+        Add node into heap, fix current.size, then let _sift_up() do the heavy lifting
         to position the new element correctly.
         """
 
@@ -27,7 +27,7 @@ class BinMinHeap:
     def _sift_up(self, index):
         """This method compares the item at the given index with its parent node and re-adjusts the tree if necessary.
 
-        This method when called during `self.insert()` takes the newly added item and pushes it UP the tree until
+        This method when called during `current.insert()` takes the newly added item and pushes it UP the tree until
         the heap property is successfully preserved in the tree. If the newly added item is very small (in the case
         of a MinHeap), we might have to swap it up several levels — potentially all the way up until it hits the top.
         Here is where our wasted element [0] is important. Notice that we can compute the parent of any node via
@@ -78,7 +78,7 @@ class BinMinHeap:
     def del_min(self):
         return_val = self.heap[1]  # copy the smallest element
         self.heap[1] = self.heap[self.length]  # set root element to a duplicate of last element
-        self.length -= 1  # reduce length (b/c we're deleting an element)
+        self.length -= 1  # reduce size (b/c we're deleting an element)
         self.heap.pop()  # remove the original copy of final element (remember we set the root to that element)
         self._sift_down(1)  # take the root element and find its correct position in the tree.
         return return_val  # return the key of the freshly-deleted minimum element
@@ -98,7 +98,7 @@ class BinMinHeap:
     def build_heap(self, list_in):
         idx = len(list_in) // 2
         self.length = len(list_in)
-        self.heap = [0] + list_in[:]  # make a copy of list in, set self.heap to that copy but start it with a 0
+        self.heap = [0] + list_in[:]  # make a copy of list in, set current.heap to that copy but start it with a 0
         while idx > 0:
             self._sift_down(idx)
             idx -= 1

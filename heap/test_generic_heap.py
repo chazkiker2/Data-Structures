@@ -17,7 +17,7 @@ class HeapTests(unittest.TestCase):
         self.heap.insert(9)
         self.heap.insert(9)
         self.heap.insert(5)
-        # self.assertEqual(self.heap.storage, [10, 9, 9, 6, 1, 8, 9, 5])
+        # current.assertEqual(current.heap.storage, [10, 9, 9, 6, 1, 8, 9, 5])
         self.assertEqual(self.heap.heap, [0, 10, 9, 9, 6, 1, 8, 9, 5])
 
     def test_default_get_priority_works(self):
@@ -80,7 +80,7 @@ class HeapTests(unittest.TestCase):
         self.heap.insert(9)
         self.heap.insert(9)
         self.heap.insert(5)
-        # self.assertEqual(self.heap.storage, [1, 5, 9, 6, 8, 10, 9, 9])
+        # current.assertEqual(current.heap.storage, [1, 5, 9, 6, 8, 10, 9, 9])
         self.assertEqual(self.heap.heap, [0, 1, 5, 9, 6, 8, 10, 9, 9])
 
     def test_custom_get_priority_works(self):
@@ -140,10 +140,10 @@ class HeapTests(unittest.TestCase):
         self.assertEqual(ascending_order, [1, 2, 5, 5, 6, 7, 8, 10])
 
     def test_bubble_up_was_called(self):
-        # self.heap._bubble_up = MagicMock()
+        # current.heap._bubble_up = MagicMock()
         self.heap._sift_up = MagicMock()
         self.heap.insert(5)
-        # self.assertTrue(self.heap._bubble_up.called)
+        # current.assertTrue(current.heap._bubble_up.called)
         self.assertTrue(self.heap._sift_up.called)
 
     def test_sift_down_was_called(self):

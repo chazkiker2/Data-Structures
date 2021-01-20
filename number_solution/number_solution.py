@@ -1,3 +1,4 @@
+from timeit import timeit
 from math import log10, floor
 
 
@@ -28,7 +29,7 @@ second half of its digits."""
     # half_power = 10 ** (floor(log10(number) + 1) // 2)
     # Calculate the number of digits.
     half_power = floor(log10(abs(number)) + 1)
-    # Divide it by two to get the length of a half. Technically since
+    # Divide it by two to get the size of a half. Technically since
     # there are guaranteed to be an even number of digits we don't
     # have to specify integer division, but it's best to be explicit
     # whenever possible
@@ -59,3 +60,20 @@ second half of its digits."""
     # return the result of checking if all the additions and
     # subtractions canceled themselves out.
     return digit_sum == 0
+
+
+def is_lucky_readable(n):
+    s = str(n)
+    pivot = len(s) // 2
+    left, right = s[:pivot], s[pivot:]
+    return sum(map(int, left)) == sum(map(int, right))
+
+
+is_lucky_time = timeit('is_lucky(123321)', globals=globals(), number=1)
+is_lucky_read_time = timeit('is_lucky_readable(123321)', globals=globals(), number=1)
+print(f"harry's: {is_lucky_time}")
+print(f"other's: {is_lucky_read_time}")
+
+# harry's: 1.0694999999949495e-05 0.000017s
+# other's: 8.707999999968408e-06  0.0000087s
+

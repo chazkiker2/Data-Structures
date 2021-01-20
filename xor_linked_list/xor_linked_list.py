@@ -152,7 +152,7 @@ class XorLinkedList:
         else:
             print("List is empty !")
 
-            # method to get length of linked list
+            # method to get size of linked list
 
     def length(self):
         if not self.isEmpty():

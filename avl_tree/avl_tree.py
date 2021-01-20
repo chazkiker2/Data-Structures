@@ -62,7 +62,7 @@ class AVLTree:
             self.height = 1 + max(self.node.left.height, self.node.right.height)
             # note max() takes the maximum of params
 
-        else:  # self.node does not exist
+        else:  # current.node does not exist
             self.height = -1  # set to -1 for 0 index (next node added will take height to 0)
 
     """
@@ -80,7 +80,7 @@ class AVLTree:
 
             self.balance = self.node.left.height - self.node.right.height
 
-        else:  # self.node does not exist
+        else:  # current.node does not exist
             self.balance = 0  # set to 0 b/c node does not exist
 
     """
@@ -169,22 +169,22 @@ class AVLTree:
 
 # driver code to test
 tree = AVLTree()
-# assertEqual(self.tree.height, -1)
+# assertEqual(current.tree.height, -1)
 tree.node = Node(5)
 tree.update_height()
-# assertEqual(self.tree.height, 0)
+# assertEqual(current.tree.height, 0)
 
 tree.node.left = AVLTree(Node(3))
 tree.update_height()
-# assertEqual(self.tree.node.left.height, 0)
-# assertEqual(self.tree.height, 1)
+# assertEqual(current.tree.node.left.height, 0)
+# assertEqual(current.tree.height, 1)
 
 tree.node.right = AVLTree(Node(6))
 tree.update_height()
-# assertEqual(self.tree.height, 1)
+# assertEqual(current.tree.height, 1)
 
 tree.node.right.node.right = AVLTree(Node(8))
 tree.update_height()
 tree.display()
 
-# assertEqual(self.tree.height, 2)
+# assertEqual(current.tree.height, 2)

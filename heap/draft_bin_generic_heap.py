@@ -9,13 +9,13 @@ class Heap:
 
     def insert(self, value):
         self.heap.append(value)  # add key to heap
-        self.length += 1  # increase length (b/c we're inserting)
+        self.length += 1  # increase size (b/c we're inserting)
         self._sift_up(self.length)  # take the freshly appended element and find its correct position in tree
 
     def delete(self):
         return_val = self.heap[1]  # copy the priority_element
         self.heap[1] = self.heap[self.length]  # assign root to last element
-        self.length -= 1  # reduce length (b/c we're deleting)
+        self.length -= 1  # reduce size (b/c we're deleting)
         self.heap.pop()  # remove last element
         self._sift_down(1)  # take the root element and find its correct position in the tree
         return return_val

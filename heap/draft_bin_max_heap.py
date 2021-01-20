@@ -20,7 +20,7 @@ class BinMaxHeap:
             index //= 2  # shorthand for `index = index // 2`
 
     def max_child(self, idx):
-        if idx * 2 + 1 > self.length:  # if index greater than length, right child does not exist
+        if idx * 2 + 1 > self.length:  # if index greater than size, right child does not exist
             return idx * 2  # return left_child index
         elif self.heap[idx * 2] > self.heap[idx * 2 + 1]:  # if left_child > right_child
             return idx * 2  # return left_child index
