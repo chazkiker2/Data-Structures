@@ -24,7 +24,7 @@ class Heap:
     #     _heapify = heapify
 
     def heapify(self):
-        """Transform list into a heap, in-place, in O(len(x)) time"""
+        """Transform list into a heap, in-place, in O(len(row_i)) time"""
         n = len(self.storage)
         # Transform bottom-up. The largest idx there's any point to looking at is
         # the largest with a child idx in-range, so must have 2*idx + 1 < n,
