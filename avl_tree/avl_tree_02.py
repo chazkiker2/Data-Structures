@@ -4,6 +4,7 @@ class TreeNode:
         self.val = val
         self.left = None
         self.right = None
+        self.parent = None  # also track parent of node for easier rotations
         self.height = 1
 
 
