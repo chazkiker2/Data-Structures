@@ -76,17 +76,6 @@ class MyTestCase(unittest.TestCase):
 
         print('PASSED LEFT-RIGHT')
 
-    # def test_correctness(self):
-    #     # CORRECTNESS TEST
-    #     # try:
-    #     self.test_left_left()
-    #     self.test_right_right()
-    #     self.test_left_right()
-    #     self.test_right_left()
-    #     print('> PASSED CORRECTNESS TEST')
-    #     # except:
-    #     #     print('ERROR!')
-
 
 if __name__ == '__main__':
     unittest.main()

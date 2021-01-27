@@ -1,3 +1,5 @@
+# src_article https://medium.com/@aksh0001/avl-trees-in-python-bc3d0aeb9150
+# src_code https://github.com/aksh0001/algorithms-journal/blob/master/data_structures/trees/AVLTree.py
 from typing import List
 
 
